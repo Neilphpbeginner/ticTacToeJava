@@ -41,7 +41,7 @@ public class TicTacToe {
         return isFull;
     }
 
-//  This method will display the board will all the tokens already on. 
+//  This method will display the board with all the tokens already on. 
     public static void displayBoard() {
         System.out.println("");
         for (int i = 0; i < ticTacToe.length; i++) {
@@ -59,7 +59,7 @@ public class TicTacToe {
 //  This method will check if their is a winner either Player X or Player O.
     public static boolean checkWinner(String[][] board) {
         if (board[2][0] == "X" && board[1][0] == "X" && board[0][0] == "X"
-//  Checking all the combinations to see if Player X won the game              
+                //  Checking all the combinations to see if Player X won the game              
                 || board[2][1] == "X" && board[1][1] == "X" && board[0][1] == "X"
                 || board[2][2] == "X" && board[1][2] == "X" && board[0][2] == "X"
                 || board[0][0] == "X" && board[0][1] == "X" && board[0][2] == "X"
@@ -86,7 +86,7 @@ public class TicTacToe {
         return false;
     }
 
-//  This method initiate the game for the players to play  
+//  This method initiate the game for the players to play.  
     public static void playGame() {
         initBoard();
         do {
@@ -108,7 +108,6 @@ public class TicTacToe {
                 playerO.nextLine();
                 playerXColomn = playerO.nextInt();
             }
-
             ticTacToe[playerXRow][playerXColomn] = "X";
             numMoves++;
             if (checkWinner(ticTacToe)) {
@@ -136,7 +135,6 @@ public class TicTacToe {
                 playerX.nextLine();
                 playerOColomn = playerO.nextInt();
             }
-
             ticTacToe[playerORow][playerOColomn] = "O";
             numMoves++;
             if (checkWinner(ticTacToe)) {
@@ -152,9 +150,10 @@ public class TicTacToe {
                 != true && isBoardFull()
                 != true);
     }
-    
-// Delcaring the main method
+
+//  Delcaring the main method
     public static void main(String[] args) {
+//  Calling the playGame method to start the game      
         playGame();
     }
 }
